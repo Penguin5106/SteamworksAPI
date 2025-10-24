@@ -93,7 +93,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
@@ -107,7 +107,7 @@
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
@@ -119,7 +119,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
@@ -133,7 +133,7 @@
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
@@ -144,6 +144,64 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SteamWorksTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Include\Libraries\sdkencryptedappticket64.lib" />
+    <Library Include="Include\Libraries\steam_api.lib" />
+    <Library Include="Include\Libraries\steam_api64.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Include\dll\sdkencryptedappticket64.dll" />
+    <None Include="Include\dll\steam_api.dll" />
+    <None Include="Include\dll\steam_api64.dll" />
+    <None Include="Include\Include\steam_api.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Include\isteamapps.h" />
+    <ClInclude Include="Include\Include\isteamappticket.h" />
+    <ClInclude Include="Include\Include\isteamclient.h" />
+    <ClInclude Include="Include\Include\isteamcontroller.h" />
+    <ClInclude Include="Include\Include\isteamdualsense.h" />
+    <ClInclude Include="Include\Include\isteamfriends.h" />
+    <ClInclude Include="Include\Include\isteamgamecoordinator.h" />
+    <ClInclude Include="Include\Include\isteamgameserver.h" />
+    <ClInclude Include="Include\Include\isteamgameserverstats.h" />
+    <ClInclude Include="Include\Include\isteamhtmlsurface.h" />
+    <ClInclude Include="Include\Include\isteamhttp.h" />
+    <ClInclude Include="Include\Include\isteaminput.h" />
+    <ClInclude Include="Include\Include\isteaminventory.h" />
+    <ClInclude Include="Include\Include\isteammatchmaking.h" />
+    <ClInclude Include="Include\Include\isteammusic.h" />
+    <ClInclude Include="Include\Include\isteammusicremote.h" />
+    <ClInclude Include="Include\Include\isteamnetworking.h" />
+    <ClInclude Include="Include\Include\isteamnetworkingmessages.h" />
+    <ClInclude Include="Include\Include\isteamnetworkingsockets.h" />
+    <ClInclude Include="Include\Include\isteamnetworkingutils.h" />
+    <ClInclude Include="Include\Include\isteamparentalsettings.h" />
+    <ClInclude Include="Include\Include\isteamps3overlayrenderer.h" />
+    <ClInclude Include="Include\Include\isteamremoteplay.h" />
+    <ClInclude Include="Include\Include\isteamremotestorage.h" />
+    <ClInclude Include="Include\Include\isteamscreenshots.h" />
+    <ClInclude Include="Include\Include\isteamtimeline.h" />
+    <ClInclude Include="Include\Include\isteamugc.h" />
+    <ClInclude Include="Include\Include\isteamuser.h" />
+    <ClInclude Include="Include\Include\isteamuserstats.h" />
+    <ClInclude Include="Include\Include\isteamutils.h" />
+    <ClInclude Include="Include\Include\isteamvideo.h" />
+    <ClInclude Include="Include\Include\matchmakingtypes.h" />
+    <ClInclude Include="Include\Include\steamclientpublic.h" />
+    <ClInclude Include="Include\Include\steamencryptedappticket.h" />
+    <ClInclude Include="Include\Include\steamhttpenums.h" />
+    <ClInclude Include="Include\Include\steamnetworkingfakeip.h" />
+    <ClInclude Include="Include\Include\steamnetworkingtypes.h" />
+    <ClInclude Include="Include\Include\steamps3params.h" />
+    <ClInclude Include="Include\Include\steamtypes.h" />
+    <ClInclude Include="Include\Include\steamuniverse.h" />
+    <ClInclude Include="Include\Include\steam_api.h" />
+    <ClInclude Include="Include\Include\steam_api_common.h" />
+    <ClInclude Include="Include\Include\steam_api_flat.h" />
+    <ClInclude Include="Include\Include\steam_api_internal.h" />
+    <ClInclude Include="Include\Include\steam_gameserver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

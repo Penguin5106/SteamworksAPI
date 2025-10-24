@@ -1,0 +1,13 @@
+#include <iostream>
+#include "steam_api.h"
+#include "isteamnetworking.h"
+#include "isteamnetworkingmessages.h"
+#include "isteamnetworkingsockets.h"
+#include "isteamnetworkingutils.h"
+
+
+int main()
+{
+	SteamAPI_RestartAppIfNecessary((AppID)480);
+	return 0;
+}
