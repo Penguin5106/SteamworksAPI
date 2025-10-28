@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+/.vs/SteamWorksTest/FileContentIndex/*
+/.vs/SteamWorksTest/v17/*
+*.vsidx

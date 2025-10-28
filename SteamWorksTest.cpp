@@ -4,9 +4,13 @@
 #include "isteamnetworkingmessages.h"
 #include "isteamnetworkingsockets.h"
 #include "isteamnetworkingutils.h"
+#include "steamnetworkingtypes.h"
+#include <steam_gameserver.h>
 
 #include <string>
 
+
+HSteamListenSocket ListenSocket;
 
 extern "C" void __cdecl SteamAPIDebugTextHook(int nSeverity, const char* pchDebugText)
 {
@@ -17,6 +21,45 @@ extern "C" void __cdecl SteamAPIDebugTextHook(int nSeverity, const char* pchDebu
 		int x = 3;
 		x = x;
 	}
+}
+
+void startServer()
+{
+	EServerMode serverMode = eServerModeAuthenticationAndSecure;
+	uint32 unIP = 0x00000000;
+	const char* version = "2000000000009";
+
+	SteamErrMsg *errMsg = { 0 };
+
+	if (SteamGameServer_InitEx(unIP, 27015, 27016, serverMode, version, errMsg) != k_ESteamAPIInitResult_OK)
+	{
+		std::cout << "Game Server failed to initialise - " << errMsg << std::endl;
+	}
+
+	if (SteamGameServer())
+	{
+		// i dont expect anyone to mod my game so this will stay an empty string
+		SteamGameServer()->SetModDir("");
+
+		// sets unique identifying details
+		SteamGameServer()->SetProduct("480");
+		SteamGameServer()->SetGameDescription("SteamWorks Networking Test");
+
+		// anonymous is used here since i dont need a persistent server account
+		SteamGameServer()->LogOnAnonymous();
+
+		// when using authentication this sets the server open to requests
+		SteamGameServer()->SetAdvertiseServerActive(true);
+
+	}
+	else 
+	{
+		std::cout << "steam game server invalid" << std::endl;
+	}
+
+
+
+	ListenSocket = SteamNetworkingSockets()->CreateListenSocketP2P(0, 0, nullptr);
 }
 
 
@@ -57,7 +100,7 @@ int main()
 
 	SteamClient()->SetWarningMessageHook(&SteamAPIDebugTextHook);
 
-
+	SteamNetworkingUtils()->InitRelayNetworkAccess();
 
 	// ------------------------------------ setup complete ----------------------------------------------- //
 
