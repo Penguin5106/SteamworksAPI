@@ -6,6 +6,7 @@
 #include "isteamnetworkingutils.h"
 #include "steamnetworkingtypes.h"
 #include <steam_gameserver.h>
+#include "ServerBrowser.h"
 
 #include <string>
 
@@ -62,6 +63,23 @@ void startServer()
 	ListenSocket = SteamNetworkingSockets()->CreateListenSocketP2P(0, 0, nullptr);
 }
 
+void stopServer()
+{
+	// should send shutdown message to all clients here
+
+	SteamGameServerNetworkingSockets()->CloseListenSocket(ListenSocket);
+
+	SteamGameServer()->LogOff();
+
+	SteamGameServer_Shutdown();
+}
+
+void findServer(ServerBrowser Browser)
+{
+
+
+
+}
 
 void GameLoop()
 {
@@ -73,6 +91,8 @@ void GameLoop()
 		std::cin >> x;
 
 		running = false;
+
+		SteamAPI_RunCallbacks();
 	}
 }
 
