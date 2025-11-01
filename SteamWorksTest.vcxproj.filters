@@ -30,6 +30,12 @@
     <ClCompile Include="SteamWorksTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ServerBrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Include\Libraries\sdkencryptedappticket64.lib">
@@ -191,6 +197,12 @@
     </ClInclude>
     <ClInclude Include="Include\Include\isteamtimeline.h">
       <Filter>Include\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerBrowser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

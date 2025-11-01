@@ -1,4 +1,5 @@
 #include "ServerBrowser.h"
+#include <iostream>
 
 GameServer::GameServer(gameserveritem_t* GameServerItem)
 {
@@ -10,6 +11,8 @@ GameServer::GameServer(gameserveritem_t* GameServerItem)
 	ServerVersion = GameServerItem->m_nServerVersion;
 	strncpy_safe(ServerName, GameServerItem->GetName(), 64);
 	SteamID = GameServerItem->m_steamID;
+
+	std::cout << IPAddress << " " << ConnectionPort << " " << ServerName << std::endl;
 }
 
 

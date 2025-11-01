@@ -84,13 +84,16 @@ void findServer(ServerBrowser Browser)
 void GameLoop()
 {
 	bool running = true;
+	
+	startServer();
 
 	while (running)
 	{
 		std::string x;
 		std::cin >> x;
 
-		running = false;
+		if (x == "x")
+			running = false;
 
 		SteamAPI_RunCallbacks();
 	}
