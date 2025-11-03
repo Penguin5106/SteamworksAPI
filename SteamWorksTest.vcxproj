@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="ServerBrowser.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="PlayerHostedGameServer.cpp" />
     <ClCompile Include="SteamWorksTest.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -206,6 +207,7 @@
     <ClInclude Include="Include\Include\steam_gameserver.h" />
     <ClInclude Include="ServerBrowser.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="PlayerHostedGameServer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

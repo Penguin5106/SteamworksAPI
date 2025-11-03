@@ -37,10 +37,13 @@ void ServerBrowser::RefreshInternetServers()
 	MatchMakingKeyValuePair_t pFilters[1];
 	MatchMakingKeyValuePair_t* pFilter = pFilters;
 
+	//strncpy_safe(pFilters[0].m_szKey, "gamedir", sizeof(pFilters[0].m_szKey));
+	//strncpy_safe(pFilters[0].m_szValue, "2000000000009", sizeof(pFilters[0].m_szValue));
+
 	strncpy_safe(pFilters[0].m_szKey, "secure", sizeof(pFilters[0].m_szKey));
 	strncpy_safe(pFilters[0].m_szValue, "1", sizeof(pFilters[0].m_szValue));
 
-	currentServerListRequest = SteamMatchmakingServers()->RequestInternetServerList(SteamUtils()->GetAppID(), &pFilter, 1, this);
+	currentServerListRequest = SteamMatchmakingServers()->RequestInternetServerList(SteamUtils()->GetAppID(), &pFilter, (sizeof(pFilters) / sizeof(pFilters[0])), this);
 }
 
 void ServerBrowser::RefreshLanServers()
@@ -66,6 +69,8 @@ void ServerBrowser::RefreshLanServers()
 
 void ServerBrowser::ServerResponded(HServerListRequest hReq, int iServer)
 {
+	AvailableServers.clear();
+
 	gameserveritem_t* pServer = SteamMatchmakingServers()->GetServerDetails(hReq, iServer);
 	if (pServer)
 	{
@@ -86,4 +91,6 @@ void ServerBrowser::ServerFailedToRespond(HServerListRequest hReq, int iServer)
 void ServerBrowser::RefreshComplete(HServerListRequest hReq, EMatchMakingServerResponse response)
 {
 	requestInProgress = false;
+
+	std::cout << "\n\n\n" << std::endl;
 }

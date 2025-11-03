@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "J:\\Uni\\Year2\\Programming API\\SteamworksAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|J:\\Uni\\Year2\\Programming API\\SteamworksAPI\\SteamWorksTest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:SteamWorksTest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|J:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:ServerBrowser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|J:\\Uni\\Year2\\Programming API\\SteamworksAPI\\SteamWorksTest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:SteamWorksTest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|J:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -22,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ServerBrowser.cpp",
               "DocumentMoniker": "J:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.cpp",
               "RelativeDocumentMoniker": "ServerBrowser.cpp",
               "ToolTip": "J:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.cpp",
               "RelativeToolTip": "ServerBrowser.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAF4AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-30T16:43:25.345Z",
               "EditorCaption": ""
@@ -45,20 +45,20 @@
               "RelativeDocumentMoniker": "ServerBrowser.h",
               "ToolTip": "J:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.h",
               "RelativeToolTip": "ServerBrowser.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-10-30T15:49:49.254Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "SteamWorksTest.cpp",
               "DocumentMoniker": "J:\\Uni\\Year2\\Programming API\\SteamworksAPI\\SteamWorksTest.cpp",
               "RelativeDocumentMoniker": "SteamWorksTest.cpp",
-              "ToolTip": "J:\\Uni\\Year2\\Programming API\\SteamworksAPI\\SteamWorksTest.cpp*",
-              "RelativeToolTip": "SteamWorksTest.cpp*",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAFcAAAABAAAAAAAAAA==",
+              "ToolTip": "J:\\Uni\\Year2\\Programming API\\SteamworksAPI\\SteamWorksTest.cpp",
+              "RelativeToolTip": "SteamWorksTest.cpp",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAG8AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-24T15:29:26.622Z",
               "EditorCaption": ""

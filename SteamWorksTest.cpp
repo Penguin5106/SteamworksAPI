@@ -7,6 +7,7 @@
 #include "steamnetworkingtypes.h"
 #include <steam_gameserver.h>
 #include "ServerBrowser.h"
+#include "PlayerHostedGameServer.h"
 
 #include <string>
 
@@ -24,55 +25,7 @@ extern "C" void __cdecl SteamAPIDebugTextHook(int nSeverity, const char* pchDebu
 	}
 }
 
-void startServer()
-{
-	EServerMode serverMode = eServerModeAuthenticationAndSecure;
-	uint32 unIP = 0x00000000;
-	const char* version = "2000000000009";
 
-	SteamErrMsg *errMsg = { 0 };
-
-	if (SteamGameServer_InitEx(unIP, 27015, 27016, serverMode, version, errMsg) != k_ESteamAPIInitResult_OK)
-	{
-		std::cout << "Game Server failed to initialise - " << errMsg << std::endl;
-	}
-
-	if (SteamGameServer())
-	{
-		// i dont expect anyone to mod my game so this will stay an empty string
-		SteamGameServer()->SetModDir("");
-
-		// sets unique identifying details
-		SteamGameServer()->SetProduct("480");
-		SteamGameServer()->SetGameDescription("SteamWorks Networking Test");
-
-		// anonymous is used here since i dont need a persistent server account
-		SteamGameServer()->LogOnAnonymous();
-
-		// when using authentication this sets the server open to requests
-		SteamGameServer()->SetAdvertiseServerActive(true);
-
-	}
-	else 
-	{
-		std::cout << "steam game server invalid" << std::endl;
-	}
-
-
-
-	ListenSocket = SteamNetworkingSockets()->CreateListenSocketP2P(0, 0, nullptr);
-}
-
-void stopServer()
-{
-	// should send shutdown message to all clients here
-
-	SteamGameServerNetworkingSockets()->CloseListenSocket(ListenSocket);
-
-	SteamGameServer()->LogOff();
-
-	SteamGameServer_Shutdown();
-}
 
 void findServer(ServerBrowser Browser)
 {
@@ -83,20 +36,52 @@ void findServer(ServerBrowser Browser)
 
 void GameLoop()
 {
-	bool running = true;
-	
-	startServer();
+	std::string mode;
+	std::cout << "server or client? s/c" << std::endl;
+	std::cin >> mode;
+	if (mode != "s" && mode != "c")
+		return;
 
-	while (running)
+	if (mode == "s")
 	{
-		std::string x;
-		std::cin >> x;
+		PlayerHostedGameServer PHGameServer = PlayerHostedGameServer();
 
-		if (x == "x")
-			running = false;
+		while (mode == "s")
+		{
+			for (int i = 0; i < 9999999; ++i)
+			{
+				SteamGameServer_RunCallbacks();
 
-		SteamAPI_RunCallbacks();
+				PHGameServer.sendUpdatedServerDetailsToSteam();
+
+				SteamAPI_RunCallbacks();
+			}
+			std::cout << "enter s to refresh" << std::endl;
+			std::cin >> mode;
+		}
+		
+		return;
 	}
+
+	
+	if (mode == "c")
+	{
+		while (mode == "c")
+		{
+			ServerBrowser browser = ServerBrowser();
+
+			for (int i = 0; i < 9999999; ++i)
+			{
+				browser.RefreshLanServers();
+
+				SteamAPI_RunCallbacks();
+			}
+			std::cout << "enter c to refresh" << std::endl;
+			std::cin >> mode;
+		}
+		return;
+	}
+	//client can find internet servers but no lan servers, may be due to VM settings
 }
 
 // main function is reserved for setup and shutdown procedures
