@@ -6,7 +6,8 @@
 #include "isteamnetworkingutils.h"
 #include "steamnetworkingtypes.h"
 #include <steam_gameserver.h>
-#include "ServerBrowser.h"
+
+#include "GameClient.h"
 #include "PlayerHostedGameServer.h"
 
 #include <string>
@@ -23,15 +24,6 @@ extern "C" void __cdecl SteamAPIDebugTextHook(int nSeverity, const char* pchDebu
 		int x = 3;
 		x = x;
 	}
-}
-
-
-
-void findServer(ServerBrowser Browser)
-{
-
-
-
 }
 
 void GameLoop()
@@ -63,25 +55,45 @@ void GameLoop()
 		return;
 	}
 
-	
-	if (mode == "c")
+	while (mode == "c")
 	{
-		while (mode == "c")
+		GameClient client = GameClient();
+
+		std::string selection = "a";
+		while (selection == "a")
 		{
-			ServerBrowser browser = ServerBrowser();
+			client.findServer();
 
-			for (int i = 0; i < 9999999; ++i)
+			std::cout << "enter a to refresh, x to exit,  or server index to join server" << std::endl;
+			std::cin >> selection;
+
+			if (selection == "a")
+				continue;
+			if (selection == "x")
 			{
-				browser.RefreshLanServers();
+				mode == "x";
 
-				SteamAPI_RunCallbacks();
+				break;
 			}
-			std::cout << "enter c to refresh" << std::endl;
-			std::cin >> mode;
+
+			try { 
+				int num = std::stoi(selection);
+				
+				client.StartServerConnection(client.browser.AvailableServers[num].GetIP(), client.browser.AvailableServers[num].GetPort());
+
+			}
+			catch (const std::invalid_argument&) {
+				std::cout << "Invalid input: The string is not a valid number." << std::endl;
+			}
+			catch (const std::out_of_range&) {
+				std::cout << "Number out of range." << std::endl;
+			}
 		}
-		return;
+
+		
 	}
-	//client can find internet servers but no lan servers, may be due to VM settings
+	return;
+	
 }
 
 // main function is reserved for setup and shutdown procedures

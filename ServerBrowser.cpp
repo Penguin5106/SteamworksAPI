@@ -11,8 +11,6 @@ GameServer::GameServer(gameserveritem_t* GameServerItem)
 	ServerVersion = GameServerItem->m_nServerVersion;
 	strncpy_safe(ServerName, GameServerItem->GetName(), 64);
 	SteamID = GameServerItem->m_steamID;
-
-	std::cout << IPAddress << " " << ConnectionPort << " " << ServerName << std::endl;
 }
 
 
@@ -33,15 +31,16 @@ void ServerBrowser::RefreshInternetServers()
 	}
 
 	requestInProgress = true;
+	AvailableServers.clear();
 
-	MatchMakingKeyValuePair_t pFilters[1];
+	MatchMakingKeyValuePair_t pFilters[2];
 	MatchMakingKeyValuePair_t* pFilter = pFilters;
 
-	//strncpy_safe(pFilters[0].m_szKey, "gamedir", sizeof(pFilters[0].m_szKey));
-	//strncpy_safe(pFilters[0].m_szValue, "2000000000009", sizeof(pFilters[0].m_szValue));
+	strncpy_safe(pFilters[0].m_szKey, "gamedir", sizeof(pFilters[0].m_szKey));
+	strncpy_safe(pFilters[0].m_szValue, "2000000000009", sizeof(pFilters[0].m_szValue));
 
-	strncpy_safe(pFilters[0].m_szKey, "secure", sizeof(pFilters[0].m_szKey));
-	strncpy_safe(pFilters[0].m_szValue, "1", sizeof(pFilters[0].m_szValue));
+	strncpy_safe(pFilters[1].m_szKey, "secure", sizeof(pFilters[1].m_szKey));
+	strncpy_safe(pFilters[1].m_szValue, "0", sizeof(pFilters[1].m_szValue));
 
 	currentServerListRequest = SteamMatchmakingServers()->RequestInternetServerList(SteamUtils()->GetAppID(), &pFilter, (sizeof(pFilters) / sizeof(pFilters[0])), this);
 }
@@ -63,13 +62,13 @@ void ServerBrowser::RefreshLanServers()
 	}
 
 	requestInProgress = true;
+	AvailableServers.clear();
 
 	currentServerListRequest = SteamMatchmakingServers()->RequestLANServerList(SteamUtils()->GetAppID(), this);
 }
 
 void ServerBrowser::ServerResponded(HServerListRequest hReq, int iServer)
 {
-	AvailableServers.clear();
 
 	gameserveritem_t* pServer = SteamMatchmakingServers()->GetServerDetails(hReq, iServer);
 	if (pServer)
@@ -79,6 +78,7 @@ void ServerBrowser::ServerResponded(HServerListRequest hReq, int iServer)
 		{
 			AvailableServers.push_back(GameServer(pServer));
 			
+			std::cout << AvailableServers[AvailableServers.size()-1].GetIP() << " " << AvailableServers[AvailableServers.size() - 1].GetPort() << " " << AvailableServers[AvailableServers.size() - 1].GetName() << std::endl;
 		}
 	}
 }

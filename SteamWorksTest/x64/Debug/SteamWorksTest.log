@@ -1,12 +1,50 @@
-﻿  PlayerHostedGameServer.cpp
+﻿  GameClient.cpp
 J:\Uni\Year2\Programming API\SteamworksAPI\Include\Include\matchmakingtypes.h(35,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'PlayerHostedGameServer.cpp')
+  (compiling source file 'GameClient.cpp')
   
 J:\Uni\Year2\Programming API\SteamworksAPI\Include\Include\matchmakingtypes.h(37,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'PlayerHostedGameServer.cpp')
+  (compiling source file 'GameClient.cpp')
   
 J:\Uni\Year2\Programming API\SteamworksAPI\Include\Include\matchmakingtypes.h(226,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'PlayerHostedGameServer.cpp')
+  (compiling source file 'GameClient.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(10,12): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'GameClient.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(10,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'GameClient.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(10,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'GameClient.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(20,37): error C2061: syntax error: identifier 'GameClient'
+  (compiling source file 'GameClient.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(17,3): error C2065: 'gameClient': undeclared identifier
+  (compiling source file 'GameClient.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(22,9): error C2039: 'gameClient': is not a member of 'MatchmakingPing'
+  (compiling source file 'GameClient.cpp')
+      J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(5,7):
+      see declaration of 'MatchmakingPing'
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(22,22): error C2065: 'gameClient': undeclared identifier
+  (compiling source file 'GameClient.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(23,55): error C2065: 'serverIP': undeclared identifier
+  (compiling source file 'GameClient.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(23,65): error C2065: 'serverPort': undeclared identifier
+  (compiling source file 'GameClient.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(35,4): error C2065: 'gameClient': undeclared identifier
+  (compiling source file 'GameClient.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\GameClient.cpp(20,17): error C2660: 'MatchmakingPing::RetrieveSteamIDFromGameServer': function does not take 3 arguments
+      J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(20,7):
+      see declaration of 'MatchmakingPing::RetrieveSteamIDFromGameServer'
+      J:\Uni\Year2\Programming API\SteamworksAPI\GameClient.cpp(20,17):
+      while trying to match the argument list '(GameClient *, uint32, int32)'
   
   SteamWorksTest.cpp
 J:\Uni\Year2\Programming API\SteamworksAPI\Include\Include\matchmakingtypes.h(35,3): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -18,5 +56,37 @@ J:\Uni\Year2\Programming API\SteamworksAPI\Include\Include\matchmakingtypes.h(37
 J:\Uni\Year2\Programming API\SteamworksAPI\Include\Include\matchmakingtypes.h(226,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'SteamWorksTest.cpp')
   
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(10,12): error C2143: syntax error: missing ';' before '*'
+  (compiling source file 'SteamWorksTest.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(10,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'SteamWorksTest.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(10,24): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'SteamWorksTest.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(20,37): error C2061: syntax error: identifier 'GameClient'
+  (compiling source file 'SteamWorksTest.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(17,3): error C2065: 'gameClient': undeclared identifier
+  (compiling source file 'SteamWorksTest.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(22,9): error C2039: 'gameClient': is not a member of 'MatchmakingPing'
+  (compiling source file 'SteamWorksTest.cpp')
+      J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(5,7):
+      see declaration of 'MatchmakingPing'
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(22,22): error C2065: 'gameClient': undeclared identifier
+  (compiling source file 'SteamWorksTest.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(23,55): error C2065: 'serverIP': undeclared identifier
+  (compiling source file 'SteamWorksTest.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(23,65): error C2065: 'serverPort': undeclared identifier
+  (compiling source file 'SteamWorksTest.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\MatchmakingPing.h(35,4): error C2065: 'gameClient': undeclared identifier
+  (compiling source file 'SteamWorksTest.cpp')
+  
+J:\Uni\Year2\Programming API\SteamworksAPI\SteamWorksTest.cpp(74,10): warning C4834: discarding return value of function with [[nodiscard]] attribute
   Generating Code...
-  SteamWorksTest.vcxproj -> J:\Uni\Year2\Programming API\SteamworksAPI\x64\Debug\SteamWorksTest.exe

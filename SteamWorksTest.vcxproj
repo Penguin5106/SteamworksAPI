@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameClient.cpp" />
     <ClCompile Include="ServerBrowser.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="PlayerHostedGameServer.cpp" />
@@ -160,6 +161,7 @@
     <None Include="Include\Include\steam_api.json" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameClient.h" />
     <ClInclude Include="Include\Include\isteamapps.h" />
     <ClInclude Include="Include\Include\isteamappticket.h" />
     <ClInclude Include="Include\Include\isteamclient.h" />
@@ -205,6 +207,7 @@
     <ClInclude Include="Include\Include\steam_api_flat.h" />
     <ClInclude Include="Include\Include\steam_api_internal.h" />
     <ClInclude Include="Include\Include\steam_gameserver.h" />
+    <ClInclude Include="MatchmakingPing.h" />
     <ClInclude Include="ServerBrowser.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="PlayerHostedGameServer.h" />

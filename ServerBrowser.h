@@ -4,6 +4,7 @@
 #include "isteammatchmaking.h"
 #include "isteamnetworkingutils.h"
 #include "stdafx.h"
+#include <string>
 #include <vector>
 
 class GameServer
@@ -20,6 +21,23 @@ private:
 	int ServerVersion;
 	char ServerName[64];
 	CSteamID SteamID;
+
+public:
+
+	uint32 GetIP()
+	{
+		return IPAddress;
+	}
+
+	int32 GetPort()
+	{
+		return ConnectionPort;
+	}
+
+	std::string GetName()
+	{
+		return ServerName;
+	}
 };
 
 class ServerBrowser : public ISteamMatchmakingServerListResponse
