@@ -207,7 +207,6 @@
     <ClInclude Include="Include\Include\steam_api_flat.h" />
     <ClInclude Include="Include\Include\steam_api_internal.h" />
     <ClInclude Include="Include\Include\steam_gameserver.h" />
-    <ClInclude Include="MatchmakingPing.h" />
     <ClInclude Include="ServerBrowser.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="PlayerHostedGameServer.h" />

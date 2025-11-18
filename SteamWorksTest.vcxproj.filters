@@ -213,9 +213,6 @@
     <ClInclude Include="PlayerHostedGameServer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MatchmakingPing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameClient.h">
       <Filter>Header Files</Filter>
     </ClInclude>

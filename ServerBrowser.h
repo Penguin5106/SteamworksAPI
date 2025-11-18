@@ -53,10 +53,10 @@ public:
 	void RefreshComplete(HServerListRequest hReq, EMatchMakingServerResponse response);
 
 	std::vector<GameServer> AvailableServers;
+	bool requestInProgress = false;
 
 private:
 
-	bool requestInProgress = false;
 	HServerListRequest currentServerListRequest;
 
 };

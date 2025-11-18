@@ -51,6 +51,30 @@ PlayerHostedGameServer::~PlayerHostedGameServer()
 	SteamGameServer_Shutdown();
 }
 
+
+void PlayerHostedGameServer::OnSteamServersConnected(SteamServersConnected_t* pLogonSuccess)
+{
+	std:: cout << "SpaceWarServer connected to Steam successfully" << std::endl;
+
+	// Tell Steam about our server details
+	sendUpdatedServerDetailsToSteam();
+}
+
+void PlayerHostedGameServer::OnPolicyResponse(GSPolicyResponse_t* pPolicyResponse)
+{
+	std::cout << pPolicyResponse->m_bSecure << std::endl;
+}
+
+void PlayerHostedGameServer::OnSteamServersDisconnected(SteamServersDisconnected_t* pLoggedOff)
+{
+	std::cout << "SpaceWarServer disconnected from Steam" << std::endl;
+}
+
+void PlayerHostedGameServer::OnSteamServersConnectFailure(SteamServerConnectFailure_t* pConnectFailure)
+{
+	std::cout << "SpaceWarServer failed to connect to Steam" << std::endl;
+}
+
 void PlayerHostedGameServer::sendUpdatedServerDetailsToSteam()
 {
 	SteamGameServer()->SetMaxPlayerCount(2);

@@ -14,6 +14,7 @@ GameServer::GameServer(gameserveritem_t* GameServerItem)
 }
 
 
+
 void ServerBrowser::RefreshInternetServers()
 {
 	// ignores new requests if previous one is still in progress
@@ -42,7 +43,7 @@ void ServerBrowser::RefreshInternetServers()
 	strncpy_safe(pFilters[1].m_szKey, "secure", sizeof(pFilters[1].m_szKey));
 	strncpy_safe(pFilters[1].m_szValue, "0", sizeof(pFilters[1].m_szValue));
 
-	currentServerListRequest = SteamMatchmakingServers()->RequestInternetServerList(SteamUtils()->GetAppID(), &pFilter, (sizeof(pFilters) / sizeof(pFilters[0])), this);
+	currentServerListRequest = SteamMatchmakingServers()->RequestInternetServerList(SteamUtils()->GetAppID(), &pFilter, 2, this);
 }
 
 void ServerBrowser::RefreshLanServers()
@@ -76,20 +77,33 @@ void ServerBrowser::ServerResponded(HServerListRequest hReq, int iServer)
 		// Filter out servers that don't match our appid here (might get these in LAN calls since we can't put more filters on it)
 		if (pServer->m_nAppID == SteamUtils()->GetAppID())
 		{
-			AvailableServers.push_back(GameServer(pServer));
 			
-			std::cout << AvailableServers[AvailableServers.size()-1].GetIP() << " " << AvailableServers[AvailableServers.size() - 1].GetPort() << " " << AvailableServers[AvailableServers.size() - 1].GetName() << std::endl;
+			AvailableServers.push_back(GameServer(pServer));
 		}
 	}
 }
 
 void ServerBrowser::ServerFailedToRespond(HServerListRequest hReq, int iServer)
 {
+	std::cout << "server failed to respond" << std::endl;
 	return;
 }
 
 void ServerBrowser::RefreshComplete(HServerListRequest hReq, EMatchMakingServerResponse response)
 {
+	if (AvailableServers.size() == 0)
+	{
+		std::cout << "no servers found matching the set filters";
+	}
+
+	for (int i = 0; i < AvailableServers.size(); i++)
+	{
+		GameServer server = AvailableServers[i];
+
+		std::cout << "index: " << i << "  Details: IP" << server.GetIP() << " Port" << server.GetPort() << " " << server.GetName() << std::endl;
+
+	}
+
 	requestInProgress = false;
 
 	std::cout << "\n\n\n" << std::endl;

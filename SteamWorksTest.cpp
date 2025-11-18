@@ -64,29 +64,35 @@ void GameLoop()
 		{
 			client.findServer();
 
-			std::cout << "enter a to refresh, x to exit,  or server index to join server" << std::endl;
+			std::cout << "enter a to refresh, x to exit, or server index to join server" << std::endl;
 			std::cin >> selection;
 
-			if (selection == "a")
-				continue;
 			if (selection == "x")
 			{
-				mode == "x";
+				mode = "x";
 
 				break;
 			}
 
-			try { 
-				int num = std::stoi(selection);
-				
-				client.StartServerConnection(client.browser.AvailableServers[num].GetIP(), client.browser.AvailableServers[num].GetPort());
+			if (selection != "a")
+			{
 
+				try {
+					int num = std::stoi(selection);
+
+					client.StartServerConnection(client.browser.AvailableServers[num].GetIP(), client.browser.AvailableServers[num].GetPort());
+
+				}
+				catch (const std::invalid_argument&) {
+					std::cout << "Invalid input: The string is not a valid number." << std::endl;
+				}
+				catch (const std::out_of_range&) {
+					std::cout << "Number out of range." << std::endl;
+				}
 			}
-			catch (const std::invalid_argument&) {
-				std::cout << "Invalid input: The string is not a valid number." << std::endl;
-			}
-			catch (const std::out_of_range&) {
-				std::cout << "Number out of range." << std::endl;
+			else
+			{
+				client.browser.AvailableServers.clear();
 			}
 		}
 

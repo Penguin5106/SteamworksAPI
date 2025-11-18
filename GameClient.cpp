@@ -37,10 +37,16 @@ void GameClient::ConnectToServer(CSteamID steamID)
 
 void GameClient::findServer()
 {
+
 	while (browser.AvailableServers.size() == 0)
 	{
 		browser.RefreshInternetServers();
 
+		SteamAPI_RunCallbacks();
+	}
+
+	while (browser.requestInProgress)
+	{
 		SteamAPI_RunCallbacks();
 	}
 }
