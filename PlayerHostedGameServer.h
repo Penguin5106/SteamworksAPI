@@ -8,6 +8,21 @@
 #include "steamnetworkingtypes.h"
 #include <steam_gameserver.h>
 
+#define MAX_PLAYERS_PER_SERVER 2
+
+struct ClientConnectionData
+{
+	bool isActive;
+	CSteamID steamID;
+	HSteamNetConnection connectionHandle;
+
+	ClientConnectionData()
+	{
+		isActive = false;
+		connectionHandle = 0;
+	}
+};
+
 class PlayerHostedGameServer
 {
 public:
@@ -31,6 +46,15 @@ private:
 	// Tells us that Steam has set our security policy (VAC on or off)
 	STEAM_GAMESERVER_CALLBACK(PlayerHostedGameServer, OnPolicyResponse, GSPolicyResponse_t);
 
+	STEAM_GAMESERVER_CALLBACK(PlayerHostedGameServer, OnNetConnectionStatusChanged, SteamNetConnectionStatusChangedCallback_t);
+
 	HSteamListenSocket ListenSocket;
+
+	// data for all active clients
+	ClientConnectionData ClientData[MAX_PLAYERS_PER_SERVER];
+	//data for connecting players
+	ClientConnectionData PendingClientData[MAX_PLAYERS_PER_SERVER];
+
+	HSteamNetPollGroup pollGroup;
 };
 

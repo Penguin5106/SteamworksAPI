@@ -82,3 +82,40 @@ void PlayerHostedGameServer::sendUpdatedServerDetailsToSteam()
 	SteamGameServer()->SetServerName("APITest");
 	SteamGameServer()->SetMapName("map");
 }
+
+void PlayerHostedGameServer::OnNetConnectionStatusChanged(SteamNetConnectionStatusChangedCallback_t* pCallback)
+{
+	//connection handle
+	HSteamNetConnection connection = pCallback->m_hConn;
+	//connection info
+	SteamNetConnectionInfo_t info = pCallback->m_info;
+	//previous state
+	ESteamNetworkingConnectionState oldState = pCallback->m_eOldState;
+
+	if (info.m_hListenSocket && oldState == k_ESteamNetworkingConnectionState_None && info.m_eState == k_ESteamNetworkingConnectionState_Connecting)
+	{
+		for (int i = 0; i < MAX_PLAYERS_PER_SERVER; i++)
+		{
+			if (!ClientData[i].isActive && !PendingClientData[i].connectionHandle)
+			{
+				EResult result = SteamNetworkingSockets()->AcceptConnection(connection);
+
+				if (result != k_EResultOK)
+				{
+					std::cout << "Accept Connection did not return ok, instead it returned: " << result << std::endl;
+
+					SteamGameServerNetworkingSockets()->CloseConnection(connection, k_ESteamNetConnectionEnd_AppException_Generic, "failed to accept connection", false);
+					
+					return;
+				}
+
+				PendingClientData[i].connectionHandle = connection;
+
+				SteamGameServerNetworkingSockets()->SetConnectionPollGroup(connection, pollGroup);
+
+				MessageServerSendInfo_t
+			}
+		}
+	}
+
+}
