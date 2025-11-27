@@ -6,6 +6,7 @@
 #include "isteamnetworkingsockets.h"
 #include "isteamnetworkingutils.h"
 #include "steamnetworkingtypes.h"
+#include <string>
 #include <steam_gameserver.h>
 
 #define MAX_PLAYERS_PER_SERVER 2
@@ -31,6 +32,7 @@ public:
 	~PlayerHostedGameServer();
 
 	void sendUpdatedServerDetailsToSteam();
+	void ReceiveNetworkData();
 
 private:
 
@@ -56,5 +58,7 @@ private:
 	ClientConnectionData PendingClientData[MAX_PLAYERS_PER_SERVER];
 
 	HSteamNetPollGroup pollGroup;
+
+	std::string serverName = "APITest";
 };
 

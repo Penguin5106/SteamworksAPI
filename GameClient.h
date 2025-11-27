@@ -3,6 +3,7 @@
 #include "ServerBrowser.h"
 #include "steamclientpublic.h"
 #include "isteammatchmaking.h"
+#include <iostream>
 
 
 class GameClient
@@ -13,11 +14,6 @@ public:
 
 	class MatchmakingPing : public ISteamMatchmakingPingResponse
 	{
-	private:
-
-		HServerQuery serverQuery;
-		GameClient *gameClient;
-
 
 	public:
 		MatchmakingPing()
@@ -29,7 +25,13 @@ public:
 		void RetrieveSteamIDFromGameServer(GameClient* gameClient, uint32 serverIP, uint16 serverPort)
 		{
 			this->gameClient = gameClient;
-			serverQuery = SteamMatchmakingServers()->PingServer(serverIP, serverPort, this);
+
+			IP = serverIP;
+			Port = serverPort;
+
+			std::cout << "attemting to ping server at IP: " << IP << " Port: " << Port << std::endl;
+
+			serverQuery = SteamMatchmakingServers()->PingServer(IP, Port, this);
 		}
 
 		void CancelPing()
@@ -37,8 +39,10 @@ public:
 			serverQuery = HSERVERQUERY_INVALID;
 		}
 
-		virtual void ServerResponded(gameserveritem_t& server)
+		virtual void ServerResponded(gameserveritem_t &server)
 		{
+			std::cout << "Server has Responded" << std::endl;
+
 			if (serverQuery != HSERVERQUERY_INVALID && server.m_steamID.IsValid())
 			{
 				gameClient->ConnectToServer(server.m_steamID);
@@ -49,8 +53,18 @@ public:
 
 		virtual void ServerFailedToRespond()
 		{
+			std::cout << "server failed to respond" << std::endl;
 			serverQuery = HSERVERQUERY_INVALID;
+
+			RetrieveSteamIDFromGameServer(gameClient, IP, Port);
 		}
+
+	private:
+		uint32 IP;
+		uint16 Port;
+		HServerQuery serverQuery;
+		GameClient* gameClient;
+
 	};
 	MatchmakingPing matchmakingPing;
 
@@ -69,6 +83,7 @@ public:
 	void ConnectToServer(CSteamID steamID);
 
 
-
+private:
+	STEAM_CALLBACK(GameClient, OnNetConnectionStatusChanged, SteamNetConnectionStatusChangedCallback_t);
 };
 

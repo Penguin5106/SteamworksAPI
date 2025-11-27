@@ -1,4 +1,5 @@
 #include "PlayerHostedGameServer.h"
+#include "Messages.h"
 #include <iostream>
 
 PlayerHostedGameServer::PlayerHostedGameServer()
@@ -38,6 +39,8 @@ PlayerHostedGameServer::PlayerHostedGameServer()
 
 
 	ListenSocket = SteamNetworkingSockets()->CreateListenSocketP2P(0, 0, nullptr);
+
+	pollGroup = SteamNetworkingSockets()->CreatePollGroup();
 }
 
 PlayerHostedGameServer::~PlayerHostedGameServer()
@@ -79,12 +82,14 @@ void PlayerHostedGameServer::sendUpdatedServerDetailsToSteam()
 {
 	SteamGameServer()->SetMaxPlayerCount(2);
 	SteamGameServer()->SetPasswordProtected(false);
-	SteamGameServer()->SetServerName("APITest");
+	SteamGameServer()->SetServerName(serverName.c_str());
 	SteamGameServer()->SetMapName("map");
 }
 
 void PlayerHostedGameServer::OnNetConnectionStatusChanged(SteamNetConnectionStatusChangedCallback_t* pCallback)
 {
+	std::cout << "connection status changed message recieved" << std::endl;
+
 	//connection handle
 	HSteamNetConnection connection = pCallback->m_hConn;
 	//connection info
@@ -113,9 +118,74 @@ void PlayerHostedGameServer::OnNetConnectionStatusChanged(SteamNetConnectionStat
 
 				SteamGameServerNetworkingSockets()->SetConnectionPollGroup(connection, pollGroup);
 
-				MessageServerSendInfo_t
+				MsgServerSendInfo_t msg;
+				msg.SetSteamIDServer(SteamGameServer()->GetSteamID().ConvertToUint64());
+				msg.SetServerName(serverName.c_str());
+
+				SteamGameServerNetworkingSockets()->SendMessageToConnection(connection, &msg, sizeof(MsgServerSendInfo_t), k_nSteamNetworkingSend_Reliable, nullptr);
+				
+				std::cout << "accepting connection" << std::endl;
+
+				return;
 			}
 		}
+
+		std::cout << "rejecting connection, server is full" << std::endl;
+
+		SteamGameServerNetworkingSockets()->CloseConnection(connection, k_ESteamNetConnectionEnd_AppException_Generic, "Server Full", false);
 	}
 
+}
+
+void PlayerHostedGameServer::ReceiveNetworkData()
+{
+	SteamNetworkingMessage_t* messages[64];
+	int numMessages = SteamGameServerNetworkingSockets()->ReceiveMessagesOnPollGroup(pollGroup, messages, 64);
+
+	for (int messageIndex = 0; messageIndex < numMessages; messageIndex++)
+	{
+		std::cout << "processing message" << std::endl;
+
+		SteamNetworkingMessage_t* mssge = messages[messageIndex];
+		CSteamID steamIDRemote = mssge->m_identityPeer.GetSteamID();
+		HSteamNetConnection connection = mssge->m_conn;
+
+		if (mssge->GetSize() < sizeof(uint32))
+		{
+			std::cout << "message too short, skipping message" << std::endl;
+			mssge->Release();
+			mssge = nullptr;
+			continue;
+		}
+
+		EMessage eMssge = (EMessage)LittleDWord(*(uint32*)mssge->GetData());
+
+		switch (eMssge)
+		{
+		case k_EMsgClientBeginAuthentication:
+		{
+			if (mssge->GetSize() != sizeof(MsgClientBeginAuthentication_t))
+			{
+
+				std::cout << "mesage size does not match specified type, skipping message" << std::endl;
+
+				mssge->Release();
+				mssge = nullptr;
+				continue;
+			}
+
+			std::cout << "begin auth message recieved" << std::endl;
+		}
+		
+		case k_EMsgP2PBegin:
+		{
+			std::cout << "P2P Begin message recieved" << std::endl;
+		}
+
+		case k_EMsgP2PSendingTicket:
+		{
+			std::cout << "P2P Sending Ticket recieved" << std::endl;
+		}
+		}
+	}
 }

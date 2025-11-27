@@ -46,6 +46,8 @@ void GameLoop()
 
 				PHGameServer.sendUpdatedServerDetailsToSteam();
 
+				PHGameServer.ReceiveNetworkData();
+
 				SteamAPI_RunCallbacks();
 			}
 			std::cout << "enter s to refresh" << std::endl;
@@ -80,8 +82,10 @@ void GameLoop()
 				try {
 					int num = std::stoi(selection);
 
-					client.StartServerConnection(client.browser.AvailableServers[num].GetIP(), client.browser.AvailableServers[num].GetPort());
+					client.StartServerConnection(client.browser.AvailableServers[num].GetIP(), client.browser.AvailableServers[num].GetPort() +1);
 
+					selection = "connecting";
+					break;
 				}
 				catch (const std::invalid_argument&) {
 					std::cout << "Invalid input: The string is not a valid number." << std::endl;
@@ -96,6 +100,10 @@ void GameLoop()
 			}
 		}
 
+		while (selection == "connecting")
+		{
+			SteamAPI_RunCallbacks();
+		}
 		
 	}
 	return;

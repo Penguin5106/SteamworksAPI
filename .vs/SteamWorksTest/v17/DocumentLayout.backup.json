@@ -3,137 +3,127 @@
   "WorkspaceRootPath": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\PlayerHostedGameServer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:PlayerHostedGameServer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\PlayerHostedGameServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:PlayerHostedGameServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\SteamWorksTest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:SteamWorksTest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\GameClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:GameClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\GameClient.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:GameClient.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\SteamWorksTest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:SteamWorksTest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\PlayerHostedGameServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:PlayerHostedGameServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:ServerBrowser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\GameClient.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:GameClient.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:ServerBrowser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\PlayerHostedGameServer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1691D733-C3D2-45EA-BB76-C45F153A1A20}|SteamWorksTest.vcxproj|solutionrelative:PlayerHostedGameServer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
+      "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 201,
+          "DockedWidth": 200,
           "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GameClient.h",
-              "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\GameClient.h",
-              "RelativeDocumentMoniker": "GameClient.h",
-              "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\GameClient.h",
-              "RelativeToolTip": "GameClient.h",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-13T17:07:37.645Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GameClient.cpp",
-              "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\GameClient.cpp",
-              "RelativeDocumentMoniker": "GameClient.cpp",
-              "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\GameClient.cpp",
-              "RelativeToolTip": "GameClient.cpp",
-              "ViewState": "AgIAABEAAAAAAAAAAAAUwB8AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-13T17:20:25.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ServerBrowser.h",
-              "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.h",
-              "RelativeDocumentMoniker": "ServerBrowser.h",
-              "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.h",
-              "RelativeToolTip": "ServerBrowser.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADYAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-30T15:49:49.254Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "ServerBrowser.cpp",
               "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.cpp",
               "RelativeDocumentMoniker": "ServerBrowser.cpp",
               "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.cpp",
               "RelativeToolTip": "ServerBrowser.cpp",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAACsAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-30T16:43:25.345Z"
+              "WhenOpened": "2025-11-24T22:14:44.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PlayerHostedGameServer.h",
-              "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\PlayerHostedGameServer.h",
-              "RelativeDocumentMoniker": "PlayerHostedGameServer.h",
-              "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\PlayerHostedGameServer.h",
-              "RelativeToolTip": "PlayerHostedGameServer.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAUwCQAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-02T23:06:29.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SteamWorksTest.cpp",
-              "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\SteamWorksTest.cpp",
-              "RelativeDocumentMoniker": "SteamWorksTest.cpp",
-              "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\SteamWorksTest.cpp",
-              "RelativeToolTip": "SteamWorksTest.cpp",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAEIAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-24T15:29:26.622Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedHeight": 201,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PlayerHostedGameServer.cpp",
               "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\PlayerHostedGameServer.cpp",
               "RelativeDocumentMoniker": "PlayerHostedGameServer.cpp",
               "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\PlayerHostedGameServer.cpp",
               "RelativeToolTip": "PlayerHostedGameServer.cpp",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFEAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAJIAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-02T23:44:10.313Z",
+              "WhenOpened": "2025-11-02T23:44:10.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerHostedGameServer.h",
+              "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\PlayerHostedGameServer.h",
+              "RelativeDocumentMoniker": "PlayerHostedGameServer.h",
+              "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\PlayerHostedGameServer.h",
+              "RelativeToolTip": "PlayerHostedGameServer.h",
+              "ViewState": "AgIAABIAAAAAAAAAAAAswCIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-02T23:06:29.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServerBrowser.h",
+              "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.h",
+              "RelativeDocumentMoniker": "ServerBrowser.h",
+              "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\ServerBrowser.h",
+              "RelativeToolTip": "ServerBrowser.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-30T15:49:49.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SteamWorksTest.cpp",
+              "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\SteamWorksTest.cpp",
+              "RelativeDocumentMoniker": "SteamWorksTest.cpp",
+              "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\SteamWorksTest.cpp",
+              "RelativeToolTip": "SteamWorksTest.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAYwBUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-24T15:29:26.622Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameClient.cpp",
+              "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\GameClient.cpp",
+              "RelativeDocumentMoniker": "GameClient.cpp",
+              "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\GameClient.cpp",
+              "RelativeToolTip": "GameClient.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-13T17:20:25.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameClient.h",
+              "DocumentMoniker": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\GameClient.h",
+              "RelativeDocumentMoniker": "GameClient.h",
+              "ToolTip": "E:\\Uni\\Year2\\Programming API\\SteamworksAPI\\GameClient.h",
+              "RelativeToolTip": "GameClient.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAewB0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-13T17:07:37.645Z"
             }
           ]
         }
